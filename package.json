@@ -1,0 +1,50 @@
+{
+  "name": "2223-webservices-pkwiki333",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Web-IV/2223-webservices-pkwiki333.git",
+  "author": "Quinten Van Wiele <quinten.vanwiele@student.hogent.be>",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "@koa/router": "^12.0.0",
+    "@prisma/client": "^4.6.1",
+    "axios": "^1.2.1",
+    "config": "^3.3.8",
+    "env-cmd": "^10.1.0",
+    "joi": "^17.7.0",
+    "jwks-rsa": "^3.0.0",
+    "koa": "^2.13.4",
+    "koa-better-serve": "^2.0.7",
+    "koa-bodyparser": "^4.3.0",
+    "koa-jwt": "^4.0.3",
+    "node-emoji": "^1.11.0",
+    "prisma": "^4.6.1",
+    "serialize-error": "^8.1.0",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "jest-each": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.3"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "src",
+      "node_modules",
+      "config",
+      "/__tests__/helpers.js"
+    ]
+  },
+  "scripts": {
+    "start": "npx env-cmd nodemon src/index.js",
+    "dev": "nodemon src/index.js",
+    "start:prod": "node src/index.js",
+    "test": "npx env-cmd -f .env.test jest",
+    "test:coverage": "yarn test --coverage"
+  }
+}
